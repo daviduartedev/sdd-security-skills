@@ -4,8 +4,6 @@
 
 # Skills BY: World's Okayest Software Developer (It's a joke)
 
-[![skills.sh](https://skills.sh/b/daviduartedev/skills)](https://skills.sh/daviduartedev/skills)
-
 Three agent skills I actually run. Small, composable, and meant to sit in a spec-driven loop rather than replace it. They work with any model. Fork them. Make them yours.
 
 This collection is not an orchestrator, scanner, or custom SDD framework. It is not affiliated with OWASP or with Matt Pocock.
