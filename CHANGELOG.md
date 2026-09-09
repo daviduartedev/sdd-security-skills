@@ -2,6 +2,13 @@
 
 All notable changes to this collection are documented here.
 
+## [0.2.0] - 2026-09-09
+
+- Published GitHub identity is `daviduartedev/skills`. Canonical install is `npx skills add daviduartedev/skills`.
+- Plugin id `daviduartedev-skills`. Cursor display name: World's Okayest Software Developer.
+- README follows a personal-collection layout (install, why, categorised reference) in en-UK.
+- **smoke-test-list**: after implement, local run on a free port and an unchecked human-observable checklist. No demo passwords, no product-specific defaults.
+
 ## [0.1.1] - 2026-09-09
 
 - One `Use when` per skill description, naming the SDD slot only.

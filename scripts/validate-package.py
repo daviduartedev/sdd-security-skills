@@ -142,6 +142,18 @@ def relative_link_targets(text: str) -> list[str]:
     return targets
 
 
+def published_skill_names() -> list[str]:
+    skills_root = ROOT / "skills"
+    if not skills_root.is_dir():
+        fail("missing skills/")
+        return []
+    names: list[str] = []
+    for path in sorted(skills_root.iterdir()):
+        if path.is_dir() and not path.name.startswith("_") and not path.name.startswith("."):
+            names.append(path.name)
+    return names
+
+
 def validate_published_skill(skill_name: str) -> None:
     relative = f"skills/{skill_name}/SKILL.md"
     path = require_file(relative)
@@ -194,8 +206,17 @@ def main() -> int:
         if "hooks" in cursor:
             fail(f"{CURSOR_PLUGIN} must not declare hooks")
     require_file("skills/_shared/asvs-mapping.md")
-    validate_published_skill("security-design-review")
-    validate_published_skill("security-review")
+    expected = (
+        "security-design-review",
+        "security-review",
+        "smoke-test-list",
+    )
+    published = published_skill_names()
+    for name in expected:
+        if name not in published:
+            fail(f"missing published skill {name}")
+    for name in published:
+        validate_published_skill(name)
     require_file("examples/nextjs-saas/README.md")
     require_gitignored(".agents/")
     require_gitignored("skills-lock.json")
