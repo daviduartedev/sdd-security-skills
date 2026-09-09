@@ -1,6 +1,6 @@
-# sdd-security-skills
+# sdd-security-skills / daviduartedev skills
 
-Two Agent Skills that add application-security reasoning to Spec-Driven Development.
+Composable Agent Skills for spec-driven work: an AppSec pair, plus a human smoke gate after implement. The published GitHub repository is `daviduartedev/skills`.
 
 ## Language
 
@@ -11,6 +11,10 @@ _Avoid_: design understood
 **security-review**:
 Adversarial AppSec review of a completed implementation against a fixed point.
 _Avoid_: generic code review, standards-or-spec quality pass
+
+**smoke-test-list**:
+Human-observable smoke checklist of a completed implementation, after a local run on a free port.
+_Avoid_: automated test suite, AppSec findings, commit on the agent's initiative
 
 **description**:
 The YAML `Use when` pointer that fires a published skill.

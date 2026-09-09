@@ -1,22 +1,22 @@
 # Contributing
 
-This repository is a **two-skill** Agent Skills collection: `security-design-review` and `security-review`. Propose changes against that product, not a larger security platform.
+This repository is a **three-skill** Agent Skills collection: `security-design-review`, `security-review`, and `smoke-test-list`. Propose changes against that product, not a larger platform.
 
 ## Propose a change
 
-1. Open a GitHub issue describing the gap (behavior, docs, or package invariants).
+1. Open a GitHub issue describing the gap (behaviour, docs, or package invariants).
 2. Wait for the issue to be specified before sending a pull request, unless the change is a small doc or validation fix.
-3. Keep original collection text in English. Do not paste OWASP ASVS requirement bodies; cite versioned IDs (`v5.0.0-X.X.X`) only.
+3. Keep original collection text in English (en-UK). Do not paste OWASP ASVS requirement bodies; cite versioned IDs (`v5.0.0-X.X.X`) only.
 
-V0.1 does not add orchestrators, scanners, extra skills, or an evaluation harness. Those need a new spec, not a drive-by PR.
+Further skills, orchestrators, scanners, or an evaluation harness need a new spec, not a drive-by PR.
 
 ## Scope of this collection
 
-In scope: the two published skills, shared ASVS *applicability* mapping, plugin manifests, package validation, and human docs (README, this file, CHANGELOG, `docs/engineering/`).
+In scope: the published skills, shared ASVS *applicability* mapping, plugin manifests, package validation, and human docs (README, this file, CHANGELOG, `docs/engineering/`).
 
 Out of scope without a new spec:
 
-- Additional skills
+- Additional skills beyond the three published here
 - An SDD orchestrator or wrapper around specify / ticket / implement
 - Scanners, CLIs, or SaaS
 - Evaluation fixtures, true/false-positive suites, or a test harness for agent reasoning
@@ -28,7 +28,7 @@ The `examples/nextjs-saas/` folder is a README stub reserved for later eval work
 Canonical consumer install (the whole collection):
 
 ```bash
-npx skills add daviduartedev/sdd-security-skills --all
+npx skills add daviduartedev/skills --all
 ```
 
 To work on this repo, clone it. Skill sources live at `skills/<name>/SKILL.md`. Any Agent Skills-compatible harness that reads that layout can load them. Claude Code uses `.claude-plugin/plugin.json`; Cursor uses `.cursor-plugin/plugin.json` (skills pointer `./skills/`).

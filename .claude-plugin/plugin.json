@@ -1,17 +1,18 @@
 {
-  "name": "sdd-security-skills",
-  "description": "Agent Skills collection for security design review and adversarial AppSec review using OWASP ASVS 5.0.0 by relevance",
-  "version": "0.1.1",
+  "name": "daviduartedev-skills",
+  "description": "Agent Skills for AppSec in spec-driven development (OWASP ASVS 5.0.0 by relevance) and a human smoke checklist after implement",
+  "version": "0.2.0",
   "author": {
     "name": "daviduartedev"
   },
-  "homepage": "https://github.com/daviduartedev/sdd-security-skills",
-  "repository": "https://github.com/daviduartedev/sdd-security-skills",
+  "homepage": "https://github.com/daviduartedev/skills",
+  "repository": "https://github.com/daviduartedev/skills",
   "license": "MIT",
   "keywords": [
     "skills",
     "security",
     "asvs",
-    "appsec"
+    "appsec",
+    "sdd"
   ]
 }
