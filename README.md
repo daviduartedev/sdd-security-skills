@@ -1,6 +1,4 @@
-<p>
-  <img alt="AI Skills by World's Okayest Software Developer" src="docs/assets/readme-banner.png" width="360">
-</p>
+![AI Skills by World's Okayest Software Developer](docs/assets/readme-banner.png)
 
 # Skills BY: World's Okayest Software Developer (It's a joke)
 
