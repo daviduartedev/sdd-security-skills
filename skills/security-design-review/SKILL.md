@@ -1,11 +1,11 @@
 ---
 name: security-design-review
-description: "Use when a feature's design is understood and the implementation spec is not yet finalized. Use when establishing attack surface, trust boundaries, credible abuse paths, or SEC-* security invariants before implementation."
+description: "Use when the implementation spec is not yet finalized."
 ---
 
 # security-design-review
 
-Preventive application-security review of a change whose design is understood and whose implementation spec is not yet finalized. Produce credible abuse paths and persist invariant-style `SEC-*` requirements in the consumer repository.
+Preventive application-security review of a change whose implementation spec is not yet finalized. Produce credible abuse paths and persist invariant-style `SEC-*` requirements in the consumer repository.
 
 ## Process
 
@@ -19,13 +19,9 @@ Preventive application-security review of a change whose design is understood an
 
 5. Resolve the feature slug: the value the user supplied; otherwise the branch, feature, or spec title; otherwise ask before writing the file.
 
-6. Apply only relevant OWASP ASVS 5.0.0 areas. Load [ASVS applicability mapping](../_shared/asvs-mapping.md) when choosing areas. If that file is missing, continue with the area names under Rules. Cite a specific requirement as `v5.0.0-X.X.X` (identifier only).
+6. Apply only relevant OWASP ASVS 5.0.0 areas from the [ASVS applicability mapping](../_shared/asvs-mapping.md). If that file is missing, skip structured ASVS coverage and say the mapping was absent.
 
 7. Write or update `docs/security/<feature-slug>.md` in the consumer repository. Print the same review in the conversation.
-
-## Rules
-
-ASVS area names (fallback when the mapping file is absent): V1 Encoding and Sanitization; V2 Validation and Business Logic; V3 Web Frontend Security; V4 API and Web Service; V5 File Handling; V6 Authentication; V7 Session Management; V8 Authorization; V9 Self-contained Tokens; V10 OAuth and OIDC; V11 Cryptography; V12 Secure Communication; V13 Configuration; V14 Data Protection; V15 Secure Coding and Architecture; V16 Security Logging and Error Handling; V17 WebRTC.
 
 ## Output
 
@@ -37,10 +33,10 @@ Include a section only when it adds value: Scope, Actors, Assets, Trust Boundari
 
 The review is done when all of the following hold:
 
-- Attack surface examined
-- Trust boundaries understood
-- Credible abuse paths evaluated
-- Material risks have `SEC-*`
-- Relevant ASVS areas considered
-- Assumptions explicit
-- Unsupported claims not presented as facts
+- Attack surface listed in `docs/security/<feature-slug>.md`
+- Trust boundaries named there with both sides
+- Each surviving `THREAT-*` recorded there with attacker, path, asset, and impact
+- Each material `THREAT-*` has a `SEC-*` on that file
+- Each applicable ASVS area recorded there as applied or skipped with reason, or the file states the mapping was absent
+- Assumptions listed there, or the file states none
+- The same review printed in the conversation

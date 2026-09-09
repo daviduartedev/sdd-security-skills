@@ -10,7 +10,7 @@ The review is written into the **consumer** repository and printed in the conver
 
 ## When to run it
 
-In a Spec-Driven Development workflow, run it **after the design is understood and always before the spec is finalized**. That is the slot: security properties exist in time to shape the spec, rather than arriving as after-the-fact comments on an already-written plan.
+In a Spec-Driven Development workflow, run it **always before the spec is finalized**. That is the slot: security properties exist in time to shape the spec, rather than arriving as after-the-fact comments on an already-written plan.
 
 The skill is model-invoked (the agent can notice the slot from its description). You can also invoke it by name.
 

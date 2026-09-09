@@ -8,8 +8,8 @@ An SDD loop can specify and implement a change without asking how the design can
 
 | Skill | Role | Human guide |
 | --- | --- | --- |
-| `security-design-review` | **Preventive.** After the design is understood, always **before the spec** is finalized. Records `THREAT-*` and invariant-style `SEC-*` in the *consumer* repository. | [docs/engineering/security-design-review.md](docs/engineering/security-design-review.md) |
-| `security-review` | **Verification.** Always **after implement**, against a completed change (diff, branch, or PR). Publishes evidenced `SR-*` findings. When `SEC-*` exist, records PASS or FAIL on the same design artifact. | [docs/engineering/security-review.md](docs/engineering/security-review.md) |
+| `security-design-review` | **Preventive.** Always **before the spec** is finalized. Records `THREAT-*` and invariant-style `SEC-*` in the *consumer* repository. | [docs/engineering/security-design-review.md](docs/engineering/security-design-review.md) |
+| `security-review` | **Verification.** Always **after implement**, against a completed change. Publishes evidenced `SR-*` findings. When `SEC-*` exist, records PASS or FAIL on the same design artifact. | [docs/engineering/security-review.md](docs/engineering/security-review.md) |
 
 They are a pair, not substitutes. Design review produces requirements; implementation review checks the diff and those requirements. Agent process lives in `skills/<name>/SKILL.md`. This README does not repeat it.
 
@@ -22,9 +22,9 @@ That timing is the integration. Other SDD toolchains are fine; none is a depende
 
 ## Traceability
 
-1. `THREAT-*` — credible abuse paths from design review.
-2. `SEC-*` — security invariants traced from those threats, written to `docs/security/<feature-slug>.md` in the **consumer** repository (not in this collection).
-3. `SR-*` — evidenced findings from implementation review (conversation report).
+1. `THREAT-*`: credible abuse paths from design review.
+2. `SEC-*`: security invariants traced from those threats, written to `docs/security/<feature-slug>.md` in the **consumer** repository (not in this collection).
+3. `SR-*`: evidenced findings from implementation review (conversation report).
 4. Each located `SEC-*` is marked PASS or FAIL with evidence on that same consumer file.
 
 Identifiers are local to the artifact file, starting at `001`.
@@ -50,7 +50,7 @@ The published layout is the portable Agent Skills shape: `skills/<name>/SKILL.md
 
 ## Status
 
-V0.1 — initial public collection. Evaluation fixtures and a reasoning-quality harness are future work. See [CHANGELOG](CHANGELOG.md) and [CONTRIBUTING](CONTRIBUTING.md).
+V0.1: initial public collection. Evaluation fixtures and a reasoning-quality harness are future work. See [CHANGELOG](CHANGELOG.md) and [CONTRIBUTING](CONTRIBUTING.md).
 
 ## License
 

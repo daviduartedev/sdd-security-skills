@@ -2,7 +2,7 @@
 
 Shared once for this collection. Answers **when is this area relevant?** for a change. It does not reproduce OWASP ASVS requirement bodies.
 
-When a specific requirement is named, use the versioned form `v5.0.0-X.X.X` (example: `v5.0.0-8.2.1`). Load only the areas that apply. If this file is missing at runtime, continue using area names only.
+When a specific requirement is named, use the versioned form `v5.0.0-X.X.X` (example: `v5.0.0-8.2.1`). Load only the areas that apply.
 
 Each area notes a **design** lens (threats and invariants) and an **implementation** lens (what to look for in a diff).
 
@@ -66,7 +66,7 @@ Relevant when server-side sessions, session cookies, timeout, logout, or session
 
 ## V8 Authorization
 
-Relevant when who may perform an operation, read a record, or cross a tenant/privilege boundary changes — including IDOR-style object access.
+Relevant when who may perform an operation, read a record, or cross a tenant/privilege boundary changes, including IDOR-style object access.
 
 - Design: actors, roles, tenancy, privilege boundaries, denied-by-default.
 - Implementation: missing checks on object IDs, horizontal/vertical privilege gaps, function-level bypass.

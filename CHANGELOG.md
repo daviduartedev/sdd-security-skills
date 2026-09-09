@@ -2,7 +2,14 @@
 
 All notable changes to this collection are documented here.
 
-## [0.1.0] — 2026-09-08
+## [0.1.1] - 2026-09-09
+
+- One `Use when` per skill description, naming the SDD slot only.
+- `security-design-review` completion criteria bound to facts in `docs/security/<feature-slug>.md`.
+- `security-review` ASVS completion uses the same applied-or-skipped bound.
+- ASVS V1-V17 area roster lives only in `skills/_shared/asvs-mapping.md`.
+
+## [0.1.0] - 2026-09-08
 
 Initial public collection (V0.1).
 
