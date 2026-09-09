@@ -45,6 +45,16 @@ def require_file(relative: str) -> Path | None:
     return path
 
 
+def require_nonempty_file(relative: str) -> Path | None:
+    path = require_file(relative)
+    if path is None:
+        return None
+    if not path.read_text(encoding="utf-8").strip():
+        fail(f"{relative} is empty")
+        return None
+    return path
+
+
 def load_json(relative: str) -> dict | None:
     path = require_file(relative)
     if path is None:
@@ -163,6 +173,9 @@ def validate_published_skill(skill_name: str) -> None:
 
 def main() -> int:
     require_file("LICENSE")
+    require_nonempty_file("README.md")
+    require_nonempty_file("CHANGELOG.md")
+    require_nonempty_file("CONTRIBUTING.md")
     claude = load_json(CLAUDE_PLUGIN)
     cursor = load_json(CURSOR_PLUGIN)
     require_manifest_fields(CLAUDE_PLUGIN, claude)
