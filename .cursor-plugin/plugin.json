@@ -2,7 +2,7 @@
   "name": "sdd-security-skills",
   "displayName": "SDD Security Skills",
   "description": "Agent Skills collection for security design review and adversarial AppSec review using OWASP ASVS 5.0.0 by relevance",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "daviduartedev"
   },

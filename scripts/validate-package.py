@@ -156,8 +156,13 @@ def validate_published_skill(skill_name: str) -> None:
     name = meta.get("name", "")
     if name != skill_name:
         fail(f"{relative} frontmatter name {name!r} must equal {skill_name!r}")
-    if not meta.get("description", "").strip():
+    description = meta.get("description", "").strip()
+    if not description:
         fail(f"{relative} missing frontmatter description")
+    if description.lower().count("use when") != 1:
+        fail(f"{relative} description must contain exactly one 'Use when'")
+    if "V1 Encoding and Sanitization; V2 Validation" in text:
+        fail(f"{relative} must not inline the ASVS area roster")
     skill_dir = path.parent
     root = ROOT.resolve()
     for target in relative_link_targets(text):

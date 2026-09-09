@@ -12,9 +12,9 @@ Severity is Critical, High, Medium, or Low from demonstrated exploitability and 
 
 ## When to run it
 
-In a Spec-Driven Development workflow, run it **always after implement** — after that work has been reviewed and committed on its own terms. It is a later verification step: adversarial AppSec against the finished change, not a standards-or-spec code-quality pass, and not a hook inside another workflow's review.
+In a Spec-Driven Development workflow, run it **always after implement**: after that work has been reviewed and committed on its own terms. It is a later verification step: adversarial AppSec against the finished change, not a standards-or-spec code-quality pass, and not a hook inside another workflow's review.
 
-The skill is model-invoked (the agent can notice a completed implementation, diff, pull request, or AppSec verification from its description). You can also invoke it by name.
+The skill is model-invoked (the agent can notice a completed implementation from its description). You can also invoke it by name.
 
 Skip it when there is no completed implementation to review, or when you still need a design-time review (that is `security-design-review`).
 
@@ -27,7 +27,7 @@ Skip it when there is no completed implementation to review, or when you still n
 ## Output
 
 1. A conversation report of `SR-*` findings (or an explicit statement that none met the evidence bar).
-2. When `SEC-*` were found: updates on that same consumer file (`docs/security/<feature-slug>.md`) — PASS or FAIL with evidence per requirement, plus a Verification section summarizing `SR-*`.
+2. When `SEC-*` were found: updates on that same consumer file (`docs/security/<feature-slug>.md`): PASS or FAIL with evidence per requirement, plus a Verification section summarizing `SR-*`.
 3. When no `SEC-*` were found: the conversation still contains the diff review and states that no security requirements were located. PASS/FAIL is not invented.
 
 ASVS 5.0.0 is applied by relevance. Requirement IDs, when named, use the form `v5.0.0-X.X.X`. The skill does not paste ASVS requirement text.
@@ -56,7 +56,7 @@ On the same design-review file, `SEC-001` is marked FAIL with a citation, and a 
 
 Fixed point: `main...HEAD`
 
-- SEC-001: FAIL — invoice load by `id` does not bind to the session tenant (`invoices.ts`)
+- SEC-001: FAIL: invoice load by `id` does not bind to the session tenant (`invoices.ts`)
 - SR-001 (High): cross-tenant invoice read; falsifies SEC-001
 ```
 
