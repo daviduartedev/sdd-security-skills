@@ -6,8 +6,6 @@
 
 Three agent skills I actually run. Small, composable, and meant to sit in a spec-driven loop rather than replace it. They work with any model. Fork them. Make them yours.
 
-This collection is not an orchestrator, scanner, or custom SDD framework. It is not affiliated with OWASP or with Matt Pocock.
-
 ## The skills
 
 Three skills, two categories. Agent process lives in `skills/<name>/SKILL.md`. This README does not repeat it.
