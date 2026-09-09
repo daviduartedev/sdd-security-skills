@@ -29,6 +29,8 @@ Path in the consumer repo: `docs/security/<feature-slug>.md`.
 
 Include a section only when it adds value: Scope, Actors, Assets, Trust Boundaries, Attack Surface, Threats/Abuse Cases, Security Requirements, ASVS Coverage, Assumptions, Out of Scope.
 
+Non-specialist explanation: load [teach-me-sec](../teach-me-sec/SKILL.md).
+
 ## Completion criteria
 
 The review is done when all of the following hold:

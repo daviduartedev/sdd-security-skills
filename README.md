@@ -2,20 +2,22 @@
 
 # Skills BY: World's Okayest Software Developer (It's a joke)
 
-Three agent skills I actually run. Small, composable, and meant to sit in a spec-driven loop rather than replace it. They work with any model. Fork them. Make them yours.
+Four agent skills I actually run. Small, composable, and meant to sit in a spec-driven loop rather than replace it. They work with any model. Fork them. Make them yours.
 
 ## The skills
 
-Three skills, two categories. Agent process lives in `skills/<name>/SKILL.md`. This README does not repeat it.
+Four skills, two categories. Agent process lives in `skills/<name>/SKILL.md`. This README does not repeat it.
 
 ### Security
 
-Work that asks how a change can be abused, then checks the finished code against that.
+Work that asks how a change can be abused, checks the finished code against that, and can restate the result for a non-specialist.
 
 - **[security-design-review](./skills/security-design-review/SKILL.md)**: Run **before the spec** is finalised. The agent grounds in the consumer repo, keeps only credible abuse paths (`THREAT-*`), and writes implementation-independent `SEC-*` invariants to `docs/security/<feature-slug>.md`. [Human guide](docs/engineering/security-design-review.md)
 - **[security-review](./skills/security-review/SKILL.md)**: Run **after implement**, against a **fixed point** (diff, branch, PR, or named scope). Publishes evidenced `SR-*` findings in the conversation. When `SEC-*` exist, records PASS or FAIL on that same file. [Human guide](docs/engineering/security-review.md)
 
 They are a pair: design review produces requirements; implementation review checks the diff and those requirements. OWASP ASVS 5.0.0 is applied **by relevance** (`v5.0.0-X.X.X`); requirement bodies are not copied.
+
+- **[teach-me-sec](./skills/teach-me-sec/SKILL.md)**: Run **when you want a non-specialist explanation** of a design-review or security-review. Restates that output in working literacy (`docs/security/<feature-slug>-explained.md` plus the conversation). It does not add findings. [Human guide](docs/engineering/teach-me-sec.md)
 
 ### Delivery
 
@@ -39,7 +41,7 @@ The plugin lives in [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json). 
 npx skills add daviduartedev/skills --all
 ```
 
-`npx skills add daviduartedev/skills` also works; `--all` installs all three skills without picking them one by one.
+`npx skills add daviduartedev/skills` also works; `--all` installs all four skills without picking them one by one.
 
 **For tinkerers**
 

@@ -2,6 +2,10 @@
 
 All notable changes to this collection are documented here.
 
+## [0.3.0] - 2026-09-09
+
+- **teach-me-sec**: working-literacy companion of `security-design-review` and `security-review`. Writes `docs/security/<feature-slug>-explained.md` (en-UK) and a conversation copy in the teaching language. No new findings. The AppSec pair points here when the human asks for a non-specialist explanation; those reviews stay done without it.
+
 ## [0.2.0] - 2026-09-09
 
 - Published GitHub identity is `daviduartedev/skills`. Canonical install is `npx skills add daviduartedev/skills`.

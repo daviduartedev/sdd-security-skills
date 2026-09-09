@@ -209,6 +209,7 @@ def main() -> int:
     expected = (
         "security-design-review",
         "security-review",
+        "teach-me-sec",
         "smoke-test-list",
     )
     published = published_skill_names()

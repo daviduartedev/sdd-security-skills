@@ -8,6 +8,8 @@ The skill walks an agent through a design-time application-security review of on
 
 The review is written into the **consumer** repository and printed in the conversation so later spec, implement, and verification sessions can still see it.
 
+A non-specialist restatement of that file is `teach-me-sec` (writes `docs/security/<feature-slug>-explained.md`). [Human guide](teach-me-sec.md)
+
 ## When to run it
 
 In a Spec-Driven Development workflow, run it **always before the spec is finalized**. That is the slot: security properties exist in time to shape the spec, rather than arriving as after-the-fact comments on an already-written plan.

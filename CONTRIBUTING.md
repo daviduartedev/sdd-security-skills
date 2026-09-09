@@ -1,6 +1,6 @@
 # Contributing
 
-This repository is a **three-skill** Agent Skills collection: `security-design-review`, `security-review`, and `smoke-test-list`. Propose changes against that product, not a larger platform.
+This repository is a **four-skill** Agent Skills collection: `security-design-review`, `security-review`, `teach-me-sec`, and `smoke-test-list`. Propose changes against that product, not a larger platform.
 
 ## Propose a change
 
@@ -16,7 +16,7 @@ In scope: the published skills, shared ASVS *applicability* mapping, plugin mani
 
 Out of scope without a new spec:
 
-- Additional skills beyond the three published here
+- Additional skills beyond the four published here
 - An SDD orchestrator or wrapper around specify / ticket / implement
 - Scanners, CLIs, or SaaS
 - Evaluation fixtures, true/false-positive suites, or a test harness for agent reasoning

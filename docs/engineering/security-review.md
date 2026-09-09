@@ -6,7 +6,7 @@ Human guide to the verification skill in this collection. Agent instructions liv
 
 The skill walks an agent through an adversarial application-security review of a *completed* implementation. It pins a **fixed point** (current diff, branch comparison, pull request, or stated implementation scope), keeps only issues with a credible attack path and code evidence, and publishes those as `SR-*` findings in the conversation.
 
-When originating `SEC-*` requirements exist on the design-review artifact, each one is marked PASS or FAIL with evidence on that same file, and a Verification section is appended. The skill does not create a second findings file.
+When originating `SEC-*` requirements exist on the design-review artifact, each one is marked PASS or FAIL with evidence on that same file, and a Verification section is appended. The skill does not create a second findings file. A non-specialist restatement of the report (and of the design-review file, when present) is `teach-me-sec`. [Human guide](teach-me-sec.md)
 
 Severity is Critical, High, Medium, or Low from demonstrated exploitability and impact.
 

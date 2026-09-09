@@ -1,7 +1,7 @@
 {
   "name": "daviduartedev-skills",
-  "description": "Agent Skills for AppSec in spec-driven development (OWASP ASVS 5.0.0 by relevance) and a human smoke checklist after implement",
-  "version": "0.2.0",
+  "description": "Agent Skills for AppSec in spec-driven development (OWASP ASVS 5.0.0 by relevance), a plain-language companion for those reviews, and a human smoke checklist after implement",
+  "version": "0.3.0",
   "author": {
     "name": "daviduartedev"
   },

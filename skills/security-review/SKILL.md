@@ -27,6 +27,8 @@ Primary: the conversation report of `SR-*` findings.
 
 When `SEC-*` are found on the design-review artifact (`docs/security/<feature-slug>.md` in the consumer repo): write PASS/FAIL and the Verification section only on that file.
 
+Non-specialist explanation: load [teach-me-sec](../teach-me-sec/SKILL.md).
+
 ## Completion criteria
 
 The review is done when all of the following hold:
