@@ -4,12 +4,15 @@
 from __future__ import annotations
 
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 errors: list[str] = []
+FRONTMATTER = re.compile(r"\A---\r?\n(.*?)\r?\n---(?:\r?\n|$)", re.DOTALL)
+MARKDOWN_LINK = re.compile(r"\[[^\]]*\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)")
 
 
 def fail(message: str) -> None:
@@ -102,6 +105,62 @@ def forbid_path(relative: str) -> None:
         fail(f"{relative} must not be present")
 
 
+def parse_frontmatter_map(block: str) -> dict[str, str]:
+    data: dict[str, str] = {}
+    for line in block.splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#") or ":" not in line:
+            continue
+        key, _, raw = line.partition(":")
+        value = raw.strip()
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
+            value = value[1:-1]
+        data[key.strip()] = value
+    return data
+
+
+def relative_link_targets(text: str) -> list[str]:
+    targets: list[str] = []
+    seen: set[str] = set()
+    for raw in MARKDOWN_LINK.findall(text):
+        if raw.startswith(("#", "http://", "https://", "mailto:")):
+            continue
+        if raw in seen:
+            continue
+        seen.add(raw)
+        targets.append(raw)
+    return targets
+
+
+def validate_published_skill(skill_name: str) -> None:
+    relative = f"skills/{skill_name}/SKILL.md"
+    path = require_file(relative)
+    if path is None:
+        return
+    text = path.read_text(encoding="utf-8")
+    match = FRONTMATTER.match(text)
+    if match is None:
+        fail(f"{relative} missing YAML frontmatter")
+        return
+    meta = parse_frontmatter_map(match.group(1))
+    name = meta.get("name", "")
+    if name != skill_name:
+        fail(f"{relative} frontmatter name {name!r} must equal {skill_name!r}")
+    if not meta.get("description", "").strip():
+        fail(f"{relative} missing frontmatter description")
+    skill_dir = path.parent
+    root = ROOT.resolve()
+    for target in relative_link_targets(text):
+        resolved = (skill_dir / target).resolve()
+        try:
+            resolved.relative_to(root)
+        except ValueError:
+            fail(f"{relative} link escapes package: {target}")
+            continue
+        if not resolved.is_file():
+            fail(f"{relative} missing linked file {target}")
+
+
 def main() -> int:
     require_file("LICENSE")
     claude = load_json(CLAUDE_PLUGIN)
@@ -117,6 +176,7 @@ def main() -> int:
         if "hooks" in cursor:
             fail(f"{CURSOR_PLUGIN} must not declare hooks")
     require_file("skills/_shared/asvs-mapping.md")
+    validate_published_skill("security-design-review")
     require_file("examples/nextjs-saas/README.md")
     require_gitignored(".agents/")
     require_gitignored("skills-lock.json")
