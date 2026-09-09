@@ -1,8 +1,8 @@
 <p>
-  <img alt="AI Skills by World's Okayest Software Developer" src="docs/assets/readme-banner.png" width="720">
+  <img alt="AI Skills by World's Okayest Software Developer" src="docs/assets/readme-banner.png" width="360">
 </p>
 
-# World's Okayest Software Developer
+# Skills BY: World's Okayest Software Developer (It's a joke)
 
 [![skills.sh](https://skills.sh/b/daviduartedev/skills)](https://skills.sh/daviduartedev/skills)
 
