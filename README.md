@@ -1,3 +1,7 @@
+<p>
+  <img alt="AI Skills by World's Okayest Software Developer" src="docs/assets/readme-banner.png" width="720">
+</p>
+
 # World's Okayest Software Developer
 
 [![skills.sh](https://skills.sh/b/daviduartedev/skills)](https://skills.sh/daviduartedev/skills)
