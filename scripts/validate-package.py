@@ -177,6 +177,7 @@ def main() -> int:
             fail(f"{CURSOR_PLUGIN} must not declare hooks")
     require_file("skills/_shared/asvs-mapping.md")
     validate_published_skill("security-design-review")
+    validate_published_skill("security-review")
     require_file("examples/nextjs-saas/README.md")
     require_gitignored(".agents/")
     require_gitignored("skills-lock.json")
